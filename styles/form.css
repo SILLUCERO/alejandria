@@ -1,0 +1,16 @@
+.form-books {
+    margin-top: 5rem;
+    background-color: #B05A7A;
+    width: 50%;
+    border-radius: 5%;
+    padding: 1.5em;
+}
+
+.btn {
+    background-color: #84D2C5;
+    width: 100%;
+}
+
+.form-control {
+    background-color: #E4C988;
+}
