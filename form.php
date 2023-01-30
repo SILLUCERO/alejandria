@@ -11,11 +11,11 @@
 </head>
 <body class="d-flex justify-content-center">
     
-    <form action="" method="post" enctype="multipart/form-data" class="form-books mt-5">
+    <form action="/funciones.php" method="post" enctype="multipart/form-data" class="form-books mt-5">
         
         <div class="mb-3">
             <label for="formFile" class="form-label">Imagen</label>
-            <input class="form-control" type="file" id="formFile">
+            <input class="form-control" type="file" id="formFile" name="btn">
         </div>
 
         <div class="mb-3">
