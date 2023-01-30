@@ -11,16 +11,16 @@
 </head>
 <body class="d-flex justify-content-center">
     
-    <form action="/funciones.php" method="post" enctype="multipart/form-data" class="form-books mt-5">
+    <form action="funciones.php" method="POST" enctype="multipart/form-data" class="form-books mt-5">
         
         <div class="mb-3">
             <label for="formFile" class="form-label">Imagen</label>
-            <input class="form-control" type="file" id="formFile" name="btn">
+            <input class="form-control" type="file" id="formFile" name="foto">
         </div>
 
         <div class="mb-3">
             <label for="exampleInput" class="form-label">Titulo</label>
-            <input class="form-control" type="text" placeholder="Titulo" aria-label="default input example">
+            <input class="form-control" type="text" placeholder="Titulo" aria-label="default input example" name="titulo">
         </div>
 
         <div class="mb-3">
@@ -30,7 +30,7 @@
     
         <div class="mb-3">
             <label for="exampleInput" class="form-label">ISBN</label>
-            <input class="form-control" type="number" placeholder="Número" aria-label="default input example">
+            <input class="form-control" type="number" placeholder="Número" aria-label="default input example" name="isbn">
         </div>
 
         <div class="mb-3">
