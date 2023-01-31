@@ -23,8 +23,8 @@ function uploadImage($isbn) {
         $filename =  $_FILES['foto']['name'];
         $filenameParts = explode('.', $filename);
         $extension = strtolower(end($filenameParts));
-        $newFilename = $isbn . '.' . $extension;
-        $destinationPath = './assets/images/' . $newFilename;
+        $newFilename = $isbn . '.' . $extension;        
+$destinationPath = './assets/images/' . $newFilename;
         move_uploaded_file($fileTmpPath, $destinationPath);
         return $newFilename;
     }

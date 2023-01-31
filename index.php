@@ -1,3 +1,6 @@
+<?php
+include_once('./conect.php');
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,40 +11,38 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <title>Document</title>
-
 </head>
 
 <body>
     <nav>
-    <div class="input-group mb-3">
-    <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-    <div class="input-group-append">
-        <button class="btn btn-outline-secondary" type="button">Button</button>
-    
-    </div>
-    </div>
+        <div class="input-group mb-3">
+            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append">
+                <button class="btn btn-outline-secondary" type="button">Button</button>
+            </div>
+        </div>
     </nav>
     
     <main>
-    <?php
-    $query = mysqli_query("SELECT * FROM alejandría WHERE id=1");
-    while ($consulted = mysqli_fetch_array($query)) {
-      echo '<div class="card" style="width: 18rem;">';
-       echo  '<img src="assets/images/'.$consulted['image'].'"  class="card-img-top" alt="...">';
-        echo    '<div class="card-body">';
-           echo '<h5 class="card-title">'.$consulted['titulo'].'</h5>';
-           echo '<p class="card-text">'.$consulted['autor'].'</p>';
-           echo '<p class="card-text">'.$consulted['editorial'].'</p>';
-             echo  '<a href="#" class="btn btn-primary">Go somewhere</a>';
-             echo  '<i class="bi bi-trash3">delete</i>';
-             echo  '<i class="bi bi-pencil-square">edit</i>';
-            echo '</div>';
-        echo '</div>';
-    }
+        <?php
+            $result = $connect->query("SELECT * FROM alejandria");
+        ?>
         
-    ?>
+        <?php while($book = $result->fetch_assoc()): ?>
+        <div class="card" style="width: 18rem;">
+            <img src="assets/images/<?php echo $book['img']; ?>"  class="card-img-top" alt="<?php echo $book['titulo']; ?>">
+            <div class="card-body">
+                <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
+                <p class="card-text"><?php echo $book['autor']; ?></p>
+                <p class="card-text"><?php echo $book['editorial']; ?></p>
+                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <i class="bi bi-trash3">delete</i>
+                <i class="bi bi-pencil-square">edit</i>
+            </div>
+        </div>
+        <?php endwhile; ?>
     </main>
-    
+</body>
 
 
 
