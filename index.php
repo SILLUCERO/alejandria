@@ -21,18 +21,27 @@
     </div>
     </div>
     </nav>
+    
     <main>
-        <div class="card" style="width: 18rem;">
-    <img src="..." class="card-img-top" alt="...">
-    <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-primary">Go somewhere</a>
-        <i class="bi bi-trash3">delete</i>
-        <i class="bi bi-pencil-square">edit</i>
-    </div>
-    </div>
+    <?php
+    $query = mysqli_query("SELECT * FROM alejandría WHERE id=1");
+    while ($consulted = mysqli_fetch_array($query)) {
+      echo '<div class="card" style="width: 18rem;">';
+       echo  '<img src="assets/images/'.$consulted['image'].'"  class="card-img-top" alt="...">';
+        echo    '<div class="card-body">';
+           echo '<h5 class="card-title">'.$consulted['titulo'].'</h5>';
+           echo '<p class="card-text">'.$consulted['autor'].'</p>';
+           echo '<p class="card-text">'.$consulted['editorial'].'</p>';
+             echo  '<a href="#" class="btn btn-primary">Go somewhere</a>';
+             echo  '<i class="bi bi-trash3">delete</i>';
+             echo  '<i class="bi bi-pencil-square">edit</i>';
+            echo '</div>';
+        echo '</div>';
+    }
+        
+    ?>
     </main>
+    
 
 
 
