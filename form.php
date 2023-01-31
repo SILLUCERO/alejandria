@@ -12,7 +12,7 @@
 <body class="d-flex justify-content-center">
     
     <form action="funciones.php" method="POST" enctype="multipart/form-data" class="form-books mt-5">
-        
+        <input type="hidden" name="current-isbn" value=""/>
         <div class="mb-3">
             <label for="formFile" class="form-label">Imagen</label>
             <input class="form-control" type="file" id="formFile" name="foto">
