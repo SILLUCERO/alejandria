@@ -37,7 +37,9 @@ include_once('./conect.php');
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
                 <i class="bi bi-trash3">delete</i>
-                <i class="bi bi-pencil-square">edit</i>
+                <a href="form.php?isbn=<?php echo $book['isbn']; ?>">
+                    <i class="bi bi-pencil-square"></i>
+                </a>
             </div>
         </div>
         <?php endwhile; ?>
