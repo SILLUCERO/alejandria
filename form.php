@@ -25,7 +25,7 @@
 
         <div class="mb-3">
             <label for="exampleInput" class="form-label">Autor</label>
-            <input class="form-control" type="text" placeholder="Autor" aria-label="default input example">
+            <input class="form-control" type="text" placeholder="Autor" aria-label="default input example" name="autor">
         </div>
     
         <div class="mb-3">
@@ -35,12 +35,12 @@
 
         <div class="mb-3">
             <label for="exampleInput" class="form-label">Editorial</label>
-            <input class="form-control" type="text" placeholder="Editorial" aria-label="default input example">
+            <input class="form-control" type="text" placeholder="Editorial" aria-label="default input example" name="editorial">
         </div>
 
         <div class="mb-3">
             <label for="exampleFormControlTextarea1" class="form-label">Sinopsis</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"></textarea>
         </div>
 
         <button type="submit" class="btn" name="btn-add">Crear</button>

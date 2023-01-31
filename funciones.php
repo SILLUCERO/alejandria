@@ -5,12 +5,23 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     if(isset($_POST['edit'])) {
         update($_POST['isbn']);
     } else {
-        create($_POST['isbn']);
+        create($_POST, $connect);
     }
 }
 
-function create($isbn) {
+function create($data, $database) {
+    $isbn = $data['isbn'];
+    $editorial = $data['editorial'];
+    $titulo = $data['titulo'];
+    $autor = $data['autor'];
+    $descripcion = $data['descripcion'];
+
     $imageName = uploadImage($isbn);
+    $sql = "INSERT INTO alejandria (isbn, editorial, titulo, autor, descripcion, img)";
+    $sql .= " VALUES ('$isbn', '$editorial', '$titulo', '$autor', '$descripcion', '$imageName')";
+    print_r($data);
+    echo $sql;
+    $database->query($sql);
 }
 
 function update($isbn) {
@@ -24,8 +35,10 @@ function uploadImage($isbn) {
         $filenameParts = explode('.', $filename);
         $extension = strtolower(end($filenameParts));
         $newFilename = $isbn . '.' . $extension;        
-$destinationPath = './assets/images/' . $newFilename;
+        $destinationPath = './assets/images/' . $newFilename;
+
         move_uploaded_file($fileTmpPath, $destinationPath);
+        
         return $newFilename;
     }
 }
