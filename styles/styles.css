@@ -1,4 +1,6 @@
 @import 'form.css';
+@import 'home.css';
+@import 'mediaqueries.css';
 
 body {
     background-color: #C27664;
