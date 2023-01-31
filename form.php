@@ -30,7 +30,7 @@
     
         <div class="mb-3">
             <label for="exampleInput" class="form-label">ISBN</label>
-            <input class="form-control" type="number" placeholder="Número" aria-label="default input example" name="isbn">
+            <input class="form-control" type="text" placeholder="Número" aria-label="default input example" name="isbn">
         </div>
 
         <div class="mb-3">

@@ -5,10 +5,10 @@
     $pass = '' ;
 
     $db = 'alejandria';
-    $connect = mysqli_connect($host,$user,$pass,$db);
+    $connect = new mysqli($host, $user, $pass, $db);
 
-    if ($connect){
-      echo 'conexion ok';
+    if (!$connect) {
+      throw new Exception('Could not connect to database');
     }
 
 ?>
