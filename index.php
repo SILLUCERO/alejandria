@@ -32,17 +32,24 @@ include_once('./conect.php');
         <?php while($book = $result->fetch_assoc()): ?>
 
         <div class="card" style="width: 18rem;">
-            <img src="assets/images/<?php echo $book['img']; ?>"  class="card-img-top" alt="<?php echo $book['titulo']; ?>">
+        <?php if (isset($book['img']) && !empty($book['img']) && file_exists('assets/images/' . $book['img'])): ?>
+            <img src="assets/images/<?php echo $book['img']; ?>" class="card-img-top" alt="<?php echo $book['titulo']; ?>">
+        <?php else : ?>
+            <img src="./assets/images/coverNotAvailable.png" class="card-img-top" alt="<?php echo $book['titulo']; ?>">
+        <?php endif; ?>
             <div class="card-body">
                 <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
                 <a href="#" class="btn btn-primary">Go somewhere</a>
-                <i class="bi bi-trash3">delete</i>
+                <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
+                    <i class="bi bi-trash3">delete</i>
+                </a> -->
                 <a href="form.php?isbn=<?php echo $book['isbn']; ?>">
                     <i class="bi bi-pencil-square"></i>
                 </a>
             </div>
+        </div>
         <?php endwhile; ?>
     </main>
 </body>
