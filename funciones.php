@@ -2,8 +2,8 @@
 require_once("conect.php");
 
 if($_SERVER['REQUEST_METHOD'] === 'POST') {
-    if(isset($_POST['edit'])) {
-        update($_POST['isbn']);
+    if(!empty($_POST['current-isbn'])) {
+        update($_POST, $connect);
     } else {
         create($_POST, $connect);
     }
@@ -17,6 +17,7 @@ function create($data, $database) {
     $descripcion = $data['descripcion'];
 
     $imageName = uploadImage($isbn);
+
     $sql = "INSERT INTO alejandria (isbn, editorial, titulo, autor, descripcion, img)";
     $sql .= " VALUES ('$isbn', '$editorial', '$titulo', '$autor', '$descripcion', '$imageName')";
     print_r($data);
@@ -24,8 +25,20 @@ function create($data, $database) {
     $database->query($sql);
 }
 
-function update($isbn) {
-    
+function update($data, $database) {
+    $isbn = $data['isbn'];
+    $editorial = $data['editorial'];
+    $titulo = $data['titulo'];
+    $autor = $data['autor'];
+    $descripcion = $data['descripcion'];
+    $currentIsbn = $data['current-isbn'];
+    $imageName = uploadImage($isbn);
+
+    $sql = "UPDATE alejandria
+            SET isbn = '$isbn', editorial = '$editorial', titulo = '$titulo', autor = '$autor', descripcion = '$descripcion', img = '$imageName'
+            WHERE isbn = '$currentIsbn'";
+
+    $database->query($sql);
 }
 
 function uploadImage($isbn) {
@@ -40,6 +53,9 @@ function uploadImage($isbn) {
         move_uploaded_file($fileTmpPath, $destinationPath);
         
         return $newFilename;
+    } 
+    if(!empty($_POST['image-name'])) {
+        return $_POST['image-name'];
     }
 }
 /* if(isset($_REQUEST[""])){
