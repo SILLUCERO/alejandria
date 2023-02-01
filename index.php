@@ -8,8 +8,9 @@ include_once('./conect.php');
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles/styles.css">
+    
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
+    <link rel="stylesheet" href="styles/styles.css">
     <title>Document</title>
 </head>
 
@@ -23,12 +24,13 @@ include_once('./conect.php');
         </div>
     </nav>
     
-    <main>
+    <main class="product-list">
         <?php
             $result = $connect->query("SELECT * FROM alejandria");
         ?>
         
         <?php while($book = $result->fetch_assoc()): ?>
+
         <div class="card" style="width: 18rem;">
             <img src="assets/images/<?php echo $book['img']; ?>"  class="card-img-top" alt="<?php echo $book['titulo']; ?>">
             <div class="card-body">
@@ -41,7 +43,6 @@ include_once('./conect.php');
                     <i class="bi bi-pencil-square"></i>
                 </a>
             </div>
-        </div>
         <?php endwhile; ?>
     </main>
 </body>
