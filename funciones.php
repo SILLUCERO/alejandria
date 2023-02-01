@@ -53,6 +53,9 @@ function uploadImage($isbn) {
         move_uploaded_file($fileTmpPath, $destinationPath);
         
         return $newFilename;
+    } 
+    if(!empty($_POST['image-name'])) {
+        return $_POST['image-name'];
     }
 }
 /* if(isset($_REQUEST[""])){
