@@ -7,6 +7,8 @@ if($_SERVER['REQUEST_METHOD'] === 'POST') {
     } else {
         create($_POST, $connect);
     }
+    header('Location: index.php', true);
+    exit();
 }
 
 function create($data, $database) {
