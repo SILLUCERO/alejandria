@@ -42,11 +42,11 @@ include_once('./conect.php');
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
                 <a href="bookDetail.php?isbn=<?php echo $book['isbn']; ?>" class="btn btn-warning">Go somewhere</a>
-                <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
-                    <i class="bi bi-trash3">delete</i>
-                </a> -->
                 <a href="form.php?isbn=<?php echo $book['isbn']; ?>">
                     <i class="bi bi-pencil-square"></i>
+                </a>
+                <a class= "submit" href="./delete.php?isbn=<?php echo $book['isbn']; ?>">
+                    <i class="bi bi-trash3"></i>
                 </a>
             </div>
         </div>
