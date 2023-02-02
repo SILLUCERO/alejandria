@@ -19,7 +19,7 @@ include_once('./conect.php');
         <div class="input-group mb-3">
             <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
             <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Button</button>
+                <button class="btn btn-outline-warning" type="button">Button</button>
             </div>
         </div>
     </nav>
@@ -42,7 +42,7 @@ include_once('./conect.php');
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
                 <p class="card-text"><?php echo $book['descripcion']; ?></p>
-                <a href="index.php" class="btn btn-primary">Go somewhere</a>
+                <a href="index.php" class="btn btn-detail btn-warning">Volver a inicio</a>
                 <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
                     <i class="bi bi-trash3">delete</i>
                 </a> -->

@@ -56,7 +56,7 @@ include_once('./conect.php');
             <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" name="descripcion"><?php echo $book['descripcion']; ?></textarea>
         </div>
 
-        <button type="submit" class="btn btn-form" name="btn-add">Crear</button>
+        <button type="submit" class="btn-form btn" name="btn-add">Crear</button>
     </form>
     
     
