@@ -31,7 +31,7 @@ include_once('./conect.php');
         $book = $result->fetch_assoc();
         ?>
     
-        <div class="card" style="width: 18rem;">
+        <div class="card-detail" style="width: 18rem;">
         <?php if (isset($book['img']) && !empty($book['img']) && file_exists('assets/images/' . $book['img'])): ?>
             <img src="assets/images/<?php echo $book['img']; ?>" class="card-img-top" alt="<?php echo $book['titulo']; ?>">
         <?php else : ?>
@@ -41,6 +41,7 @@ include_once('./conect.php');
                 <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
+                <p class="card-text"><?php echo $book['descripcion']; ?></p>
                 <a href="index.php" class="btn btn-primary">Go somewhere</a>
                 <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
                     <i class="bi bi-trash3">delete</i>

@@ -41,7 +41,7 @@ include_once('./conect.php');
                 <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
-                <a href="bookDetail.php?isbn=<?php echo $book['isbn']; ?>" class="btn btn-primary">Go somewhere</a>
+                <a href="bookDetail.php?isbn=<?php echo $book['isbn']; ?>" class="btn btn-warning">Go somewhere</a>
                 <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
                     <i class="bi bi-trash3">delete</i>
                 </a> -->

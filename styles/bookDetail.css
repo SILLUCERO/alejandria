@@ -1,0 +1,16 @@
+.card-detail {
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    display: flex;
+    flex-direction: column;
+    align-content: center;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    background-color: #B05A7A;
+}
