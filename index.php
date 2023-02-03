@@ -16,7 +16,7 @@ include_once('./conect.php');
 
 <body>
     <nav class="color navbar">
-        <img src="./assets/images/faro-alejandria.png" alt="Icono faro alejandría" style="width:100px; background-color: whitesmoke; border-radius: 10%">
+        <img src="./assets/images/faro-alejandria.png" alt="Icono faro alejandría" style="width:80px; background-color: whitesmoke; border-radius: 10%">
         <div class="container">
             <div class="input-group mb-3">
                 <input type="text" class="form-control" style="width:10px" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
