@@ -24,7 +24,7 @@ include_once('./conect.php');
         </div>
     </nav>
     
-    <main>
+    <main class=book-main>
         <?php
         $isbn = $_GET['isbn'];
         $result = $connect->query("SELECT * FROM alejandria WHERE isbn = '$isbn'");
@@ -41,13 +41,13 @@ include_once('./conect.php');
                 <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
-                <p class="card-text"><?php echo $book['descripcion']; ?></p>
+                <p class="card-text description"><?php echo $book['descripcion']; ?></p>
                 <a href="index.php" class="btn btn-detail btn-warning">Volver a inicio</a>
-                <!-- <a href="delete.php?isbn=<?php echo $book['isbn']; ?>">
-                    <i class="bi bi-trash3">delete</i>
-                </a> -->
                 <a href="form.php?isbn=<?php echo $book['isbn']; ?>">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-pencil-square" style="font-size:30px; color:#84D2C5;"></i>
+                </a>
+                <a class="submit" href="./delete.php?isbn=<?php echo $book['isbn']; ?>">
+                    <i class="bi bi-trash3" style="font-size:30px; color:#84D2C5;"></i>
                 </a>
             </div>
         </div>

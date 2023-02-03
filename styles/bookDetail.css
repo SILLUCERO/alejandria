@@ -1,16 +1,25 @@
 .card-detail {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    align-items: center;
+    gap: 4rem;
 }
 
-main {
+.book-main {
     display: flex;
     flex-direction: column;
     align-content: center;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    margin: 20%;
+    margin-top: 10%
 }
 
 .btn-detail {
     background-color: #B05A7A;
+}
+
+.description {
+    width: 50%;
+    
 }
