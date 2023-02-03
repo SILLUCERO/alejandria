@@ -19,7 +19,7 @@
     background-color: #84D2C5;
 }
 
-.nav-position {
+.container {
     display: flex;
     flex-direction: column;
     flex-wrap: nowrap;
