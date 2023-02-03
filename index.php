@@ -11,15 +11,17 @@ include_once('./conect.php');
     
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
     <link rel="stylesheet" href="styles/styles.css">
-    <title>Document</title>
+    <title>Alejandría</title>
 </head>
 
 <body>
-    <nav>
+    <nav class="color navbar">
+        <img src="./assets/images/faro-alejandria.png" alt="Icono faro alejandría" style="width:100px; background-color: whitesmoke; border-radius: 10%">
         <div class="input-group mb-3">
-            <input type="text" class="form-control" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
-            <div class="input-group-append">
-                <button class="btn btn-outline-secondary" type="button">Button</button>
+            <input type="text" class="form-control" style="width:10px" placeholder="Recipient's username" aria-label="Recipient's username" aria-describedby="basic-addon2">
+            <div class="input-group-append ">
+                <button class="btn btn-detail btn-outline-secondary" style="color: #84D2C5" type="button">Search</button>
+                <a href="form.php">Añadir libro por formulario</a>
             </div>
         </div>
     </nav>
@@ -31,7 +33,7 @@ include_once('./conect.php');
         
         <?php while($book = $result->fetch_assoc()): ?>
 
-        <div class="card" style="width: 18rem;">
+        <div class="card card-position" style="width: 18rem; margin-top: 2.5rem;">
         <?php if (isset($book['img']) && !empty($book['img']) && file_exists('assets/images/' . $book['img'])): ?>
             <img src="assets/images/<?php echo $book['img']; ?>" class="card-img-top" alt="<?php echo $book['titulo']; ?>">
         <?php else : ?>
@@ -41,12 +43,12 @@ include_once('./conect.php');
                 <h5 class="card-title"><?php echo $book['titulo']; ?></h5>
                 <p class="card-text"><?php echo $book['autor']; ?></p>
                 <p class="card-text"><?php echo $book['editorial']; ?></p>
-                <a href="bookDetail.php?isbn=<?php echo $book['isbn']; ?>" class="btn btn-warning">Go somewhere</a>
+                <a href="bookDetail.php?isbn=<?php echo $book['isbn']; ?>" class="btn btn-detail btn-warning">Ver detalle</a>
                 <a href="form.php?isbn=<?php echo $book['isbn']; ?>">
-                    <i class="bi bi-pencil-square"></i>
+                    <i class="bi bi-pencil-square" style="font-size:30px; color:#84D2C5;"></i>
                 </a>
                 <a class= "submit" href="./delete.php?isbn=<?php echo $book['isbn']; ?>">
-                    <i class="bi bi-trash3"></i>
+                    <i class="bi bi-trash3" style="font-size:30px; color:#84D2C5;"></i>
                 </a>
             </div>
         </div>

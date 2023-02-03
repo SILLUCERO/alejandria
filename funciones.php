@@ -60,12 +60,4 @@ function uploadImage($isbn) {
         return $_POST['image-name'];
     }
 }
-/* if(isset($_REQUEST[""])){
-    $nombre_imagen = $_FILES["imagen"]["titulo"];
-    $temporal = $_FILES["imagen"]["tmp_name"];
-    $carpeta = "../img";
-    $ruta = $carpeta."/".$nombre_imagen;
-    move_uploaded_file($temporal, $carpeta."/".$nombre_imagen);
 
-    $query = "INSERT INTO ";
-}; */

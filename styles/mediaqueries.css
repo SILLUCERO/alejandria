@@ -1,18 +1,27 @@
 @media only screen and (min-width: 320px){
     .product-list{
          grid-template-rows: repeat(9, 1fr);
-    }   
+    } 
+    .card-position {
+        flex-direction: column;
+    }  
 }
 
 @media only screen and (min-width: 800px){
     .product-list{
         grid-template-columns: repeat(2, 1fr);
         grid-template-rows: repeat(5, 1fr);
-   }   
+   }
+   .card-position {
+    flex-direction: column;
+}   
 }
 @media only screen and (min-width: 990px){
     .product-list{
         grid-template-columns: repeat(3, 1fr);
         grid-template-rows: repeat(3, 1fr);
    }
+   .card-position {
+        flex-direction: column;
+    }
 }

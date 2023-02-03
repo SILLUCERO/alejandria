@@ -11,6 +11,4 @@ if($query){
 header('location: ./index.php');
 }
 
-
-
 ?>

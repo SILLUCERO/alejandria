@@ -6,8 +6,25 @@
     justify-items: center;
 }
 
-.card {
+.card-position {
     display: flex;
     flex-direction: row;
 }
+
+.color {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    justify-content: center;
+    background-color: #84D2C5;
+}
+
+.nav-position {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    justify-content: center;
+}
+
+
 
